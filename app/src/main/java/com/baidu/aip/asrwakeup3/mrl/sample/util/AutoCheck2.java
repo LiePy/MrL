@@ -58,9 +58,9 @@ import java.util.TreeSet;
  * <p>
  * });
  */
-public class AutoCheck {
+public class AutoCheck2 {
 
-    private static AutoCheck instance;
+    private static AutoCheck2 instance;
 
     private LinkedHashMap<String, Check> checks;
 
@@ -75,9 +75,9 @@ public class AutoCheck {
      *
      * @return
      */
-    public static AutoCheck getInstance(Context context) {
-        if (instance == null || AutoCheck.context != context) {
-            instance = new AutoCheck(context);
+    public static AutoCheck2 getInstance(Context context) {
+        if (instance == null || AutoCheck2.context != context) {
+            instance = new AutoCheck2(context);
         }
         return instance;
     }
@@ -86,7 +86,7 @@ public class AutoCheck {
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
-                AutoCheck obj = innerCheck(initConfig);
+                AutoCheck2 obj = innerCheck(initConfig);
                 isFinished = true;
                 synchronized (obj) { // 偶发，同步线程信息
                     Message msg = handler.obtainMessage(100, obj);
@@ -98,7 +98,7 @@ public class AutoCheck {
 
     }
 
-    private AutoCheck innerCheck(InitConfig config) {
+    private AutoCheck2 innerCheck(InitConfig config) {
         boolean isOnlineSdk = TtsMode.ONLINE.equals(config.getTtsMode());
         checks.put("检查申请的Android权限", new PermissionCheck(context));
         checks.put("检查4个so文件是否存在", new JniCheck(context, isOnlineSdk));
@@ -181,7 +181,7 @@ public class AutoCheck {
         hasError = false;
     }
 
-    private AutoCheck(Context context) {
+    private AutoCheck2(Context context) {
         this.context = context;
         checks = new LinkedHashMap<>();
     }

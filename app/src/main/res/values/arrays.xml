@@ -1,12 +1,16 @@
 <resources>
-    <!-- Reply Preference -->
+    <!-- WP Preference -->
     <string-array name="reply_entries">
-        <item>Reply</item>
-        <item>Reply to all</item>
+        <item>普通女声(默认)</item>
+        <item>普通男声</item>
+        <item>情感男声(度逍遥)</item>
+        <item>情感女声(度丫丫)</item>
     </string-array>
 
     <string-array name="reply_values">
-        <item>reply</item>
-        <item>reply_all</item>
+        <item>0</item>
+        <item>1</item>
+        <item>3</item>
+        <item>4</item>
     </string-array>
 </resources>

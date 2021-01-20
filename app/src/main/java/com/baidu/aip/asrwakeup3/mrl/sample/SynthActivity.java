@@ -17,7 +17,7 @@ import com.baidu.aip.asrwakeup3.mrl.sample.control.MySyntherizer;
 import com.baidu.aip.asrwakeup3.mrl.sample.control.NonBlockSyntherizer;
 import com.baidu.aip.asrwakeup3.mrl.sample.listener.UiMessageListener;
 import com.baidu.aip.asrwakeup3.mrl.sample.util.Auth;
-import com.baidu.aip.asrwakeup3.mrl.sample.util.AutoCheck;
+import com.baidu.aip.asrwakeup3.mrl.sample.util.AutoCheck2;
 import com.baidu.aip.asrwakeup3.mrl.sample.util.FileUtil;
 import com.baidu.aip.asrwakeup3.mrl.sample.util.IOfflineResourceConst;
 import com.baidu.aip.asrwakeup3.mrl.sample.util.OfflineResource;
@@ -227,13 +227,13 @@ public class SynthActivity extends BaseActivity implements View.OnClickListener 
         }
         // 如果您集成中出错，请将下面一段代码放在和demo中相同的位置，并复制InitConfig 和 AutoCheck到您的项目中
         // 上线时请删除AutoCheck的调用
-        AutoCheck.getInstance(getApplicationContext()).check(initConfig, new Handler() {
+        AutoCheck2.getInstance(getApplicationContext()).check(initConfig, new Handler() {
             @Override
             public void handleMessage(Message msg) {
                 if (msg.what == 100) {
-                    AutoCheck autoCheck = (AutoCheck) msg.obj;
-                    synchronized (autoCheck) {
-                        String message = autoCheck.obtainDebugMessage();
+                    AutoCheck2 autoCheck2 = (AutoCheck2) msg.obj;
+                    synchronized (autoCheck2) {
+                        String message = autoCheck2.obtainDebugMessage();
                         toPrint(message); // 可以用下面一行替代，在logcat中查看代码
                         // Log.w("AutoCheckMessage", message);
                     }

@@ -59,8 +59,8 @@ public class MessageStatusRecogListener extends StatusRecogListener {
 //        sendStatusMessage(SpeechConstant.CALLBACK_EVENT_ASR_PARTIAL,
 //                message + "；原始json：" + recogResult.getOrigalJson());
         if (speechEndTime > 0) {
-            long currentTime = System.currentTimeMillis();
-            long diffTime = currentTime - speechEndTime;
+//            long currentTime = System.currentTimeMillis();
+//            long diffTime = currentTime - speechEndTime;
 //            message += "；说话结束到识别结束耗时【" + diffTime + "ms】" + currentTime;
 
         }
@@ -147,9 +147,9 @@ public class MessageStatusRecogListener extends StatusRecogListener {
     private void sendMessage(String message, int what, boolean highlight) {
 
 
-        if (needTime && what != STATUS_FINISHED) {
-            message += "  ;time=" + System.currentTimeMillis();
-        }
+//        if (needTime && what != STATUS_FINISHED) {
+//            message += "  ;time=" + System.currentTimeMillis();
+//        }
         if (handler == null) {
             Log.i(TAG, message);
             return;

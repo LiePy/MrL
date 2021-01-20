@@ -18,7 +18,7 @@ import androidx.core.content.ContextCompat;
 import com.baidu.aip.asrwakeup3.mrl.sample.control.InitConfig;
 import com.baidu.aip.asrwakeup3.mrl.sample.listener.UiMessageListener;
 import com.baidu.aip.asrwakeup3.mrl.sample.util.Auth;
-import com.baidu.aip.asrwakeup3.mrl.sample.util.AutoCheck;
+import com.baidu.aip.asrwakeup3.mrl.sample.util.AutoCheck2;
 import com.baidu.aip.asrwakeup3.mrl.sample.util.FileUtil;
 import com.baidu.aip.asrwakeup3.mrl.sample.util.IOfflineResourceConst;
 import com.baidu.tts.chainofresponsibility.logger.LoggerProxy;
@@ -180,16 +180,16 @@ public class MiniActivity extends AppCompatActivity implements IOfflineResourceC
 
         // 检测参数，通过一次后可以去除，出问题再打开debug
         InitConfig initConfig = new InitConfig(appId, appKey, secretKey, ttsMode, params, listener);
-        AutoCheck.getInstance(getApplicationContext()).check(initConfig, new Handler() {
+        AutoCheck2.getInstance(getApplicationContext()).check(initConfig, new Handler() {
             @Override
             /**
              * 开新线程检查，成功后回调
              */
             public void handleMessage(Message msg) {
                 if (msg.what == 100) {
-                    AutoCheck autoCheck = (AutoCheck) msg.obj;
-                    synchronized (autoCheck) {
-                        String message = autoCheck.obtainDebugMessage();
+                    AutoCheck2 autoCheck2 = (AutoCheck2) msg.obj;
+                    synchronized (autoCheck2) {
+                        String message = autoCheck2.obtainDebugMessage();
                         print(message); // 可以用下面一行替代，在logcat中查看代码
                         // Log.w("AutoCheckMessage", message);
                     }

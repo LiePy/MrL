@@ -1,6 +1,8 @@
 package com.baidu.aip.asrwakeup3.core.wakeup.listener;
 
 import android.os.Handler;
+import android.os.Message;
+
 import com.baidu.aip.asrwakeup3.core.recog.IStatus;
 import com.baidu.aip.asrwakeup3.core.wakeup.WakeUpResult;
 
@@ -21,6 +23,6 @@ public class RecogWakeupListener extends SimpleWakeupListener implements IStatus
     @Override
     public void onSuccess(String word, WakeUpResult result) {
         super.onSuccess(word, result);
-        handler.sendMessage(handler.obtainMessage(STATUS_WAKEUP_SUCCESS));
+        handler.sendMessage(handler.obtainMessage(STATUS_WAKEUP_SUCCESS,word));
     }
 }
