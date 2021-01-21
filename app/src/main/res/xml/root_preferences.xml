@@ -16,11 +16,35 @@
     <PreferenceCategory app:title="@string/tts_header">
 
         <ListPreference
-            app:defaultValue="@string/voice_value"
-            app:entries="@array/reply_entries"
-            app:entryValues="@array/reply_values"
-            app:key="voice"
-            app:title="@string/voice_title"
+            app:defaultValue="@string/volume_value"
+            app:entries="@array/speaker_entries"
+            app:entryValues="@array/speaker_values"
+            app:key="speaker"
+            app:title="@string/speaker_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="@string/volume_value"
+            app:entries="@array/volume_entries"
+            app:entryValues="@array/volume_values"
+            app:key="volume"
+            app:title="@string/volume_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="@string/speed_value"
+            app:entries="@array/volume_entries"
+            app:entryValues="@array/volume_values"
+            app:key="speed"
+            app:title="@string/speed_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="@string/pitch_value"
+            app:entries="@array/volume_entries"
+            app:entryValues="@array/volume_values"
+            app:key="pitch"
+            app:title="@string/pitch_title"
             app:useSimpleSummaryProvider="true" />
 
         <SwitchPreferenceCompat
@@ -28,7 +52,7 @@
             app:title="@string/sync_title" />
 
         <SwitchPreferenceCompat
-            app:dependency="sync"
+            app:dependency="switch"
 
             app:key="attachment"
             app:summaryOff="@string/attachment_summary_off"
@@ -40,10 +64,6 @@
     <PreferenceCategory app:title="@string/other_header">
 
 
-        <RingtonePreference
-            android:defaultValue="123"
-            android:key="ringtone_preference_1"
-            android:title="Ringtone preference" />
     </PreferenceCategory>
 
 </PreferenceScreen>

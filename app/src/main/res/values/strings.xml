@@ -10,9 +10,17 @@
 
     <!-- wp Preferences -->
     <string name="name_title">名字</string>
-    <string name="voice_title">人声模板</string>
+    <string name="speaker_title">人声模板</string>
+    <string name="volume_title">说话音量</string>
+    <string name="speed_title">说话语速</string>
+    <string name="pitch_title">说话语调</string>
+
     <string name="name_value">小O小O</string>
-    <string name="voice_value">普通女声</string>
+    <string name="speaker_value">普通女声(默认)</string>
+    <string name="volume_value">7(默认)</string>
+    <string name="speed_value">7(默认)</string>
+    <string name="pitch_value">7(默认)</string>
+
 
 
     <!-- tts Preferences -->

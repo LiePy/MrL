@@ -151,14 +151,14 @@ public class SettingsActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         // 此处为android 6.0以上动态授权的回调，用户自行实现。
         switch (requestCode) {
-            case REQUEST_CODE_ADDRESS:
+            case 1:
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] ==PackageManager.PERMISSION_GRANTED) {
                     // Permission Granted 授予权限
                     //处理授权之后逻辑
 
                 } else {
                     // Permission Denied 权限被拒绝
-                    Toast.makeText(this,"没有权限，请先授权",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,"您拒绝了授权",Toast.LENGTH_LONG).show();
                 }
 
                 break;
