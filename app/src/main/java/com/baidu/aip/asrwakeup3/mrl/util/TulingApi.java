@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.baidu.aip.asrwakeup3.mrl.util.util.print;
+import static com.baidu.aip.asrwakeup3.mrl.util.Util.print;
 
 public class TulingApi {
     //图灵机器人接口

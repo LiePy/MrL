@@ -26,14 +26,14 @@ import java.util.List;
 import static android.content.Context.NOTIFICATION_SERVICE;
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
-public class util {
+public class Util {
     protected SpeechSynthesizer mSpeechSynthesizer;
     protected Context mContext;
 
-    public util(Context context, SpeechSynthesizer mSynthesizer){
-        this.mContext = context;
-        this.mSpeechSynthesizer = mSynthesizer;
-    }
+//    public util(Context context, SpeechSynthesizer mSynthesizer){
+//        this.mContext = context;
+//        this.mSpeechSynthesizer = mSynthesizer;
+//    }
 
     public static void print(String str){
         Log.d("打印日志：",str);
@@ -105,44 +105,4 @@ public class util {
         return 0;
     }
 
-    //合成并播放
-    public void speak(String text) {
-        /* 以下参数每次合成时都可以修改
-         *  mSpeechSynthesizer.setParam(SpeechSynthesizer.PARAM_SPEAKER, "0");
-         *  设置在线发声音人： 0 普通女声（默认） 1 普通男声  3 情感男声<度逍遥> 4 情感儿童声<度丫丫>
-         *  mSpeechSynthesizer.setParam(SpeechSynthesizer.PARAM_VOLUME, "5"); 设置合成的音量，0-9 ，默认 5
-         *  mSpeechSynthesizer.setParam(SpeechSynthesizer.PARAM_SPEED, "5"); 设置合成的语速，0-9 ，默认 5
-         *  mSpeechSynthesizer.setParam(SpeechSynthesizer.PARAM_PITCH, "5"); 设置合成的语调，0-9 ，默认 5
-         *
-         */
-//        mSpeechSynthesizer.setParam(SpeechSynthesizer.PARAM_SPEAKER, "4");
-
-        if (mSpeechSynthesizer == null) {
-            print("[ERROR], 初始化失败");
-            return;
-        }
-        int result = mSpeechSynthesizer.speak(text);
-        print("合成并播放");
-        checkResult(result, "speak");
-    }
-
-    public static boolean checkOfflineResources(String TEXT_FILENAME, String MODEL_FILENAME) {
-        String[] filenames = {TEXT_FILENAME, MODEL_FILENAME};
-        for (String path : filenames) {
-            File f = new File(path);
-            if (!f.canRead()) {
-                print("[ERROR] 文件不存在或者不可读取，请从demo的assets目录复制同名文件到："
-                        + f.getAbsolutePath());
-                print("[ERROR] 初始化失败！！！");
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public static void checkResult(int result, String method) {
-        if (result != 0) {
-            print("error code :" + result + " method:" + method);
-        }
-    }
 }
