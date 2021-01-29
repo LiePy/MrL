@@ -11,7 +11,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -36,6 +36,7 @@ dependencies {
     implementation project(path: ':core')
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation files('libs\\com.baidu.tts_2.6.2.2.20200629_44818d4.jar')
+    implementation 'junit:junit:4.12'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

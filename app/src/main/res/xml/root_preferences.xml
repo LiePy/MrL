@@ -47,17 +47,16 @@
             app:title="@string/pitch_title"
             app:useSimpleSummaryProvider="true" />
 
-        <SwitchPreferenceCompat
-            app:key="switch"
-            app:title="@string/sync_title" />
+<!--        <SwitchPreferenceCompat-->
+<!--            app:key="switch"-->
+<!--            app:title="@string/sync_title" />-->
 
-        <SwitchPreferenceCompat
-            app:dependency="switch"
-
-            app:key="attachment"
-            app:summaryOff="@string/attachment_summary_off"
-            app:summaryOn="@string/attachment_summary_on"
-            app:title="@string/attachment_title" />
+<!--        <SwitchPreferenceCompat-->
+<!--            app:dependency="switch"-->
+<!--            app:key="attachment"-->
+<!--            app:summaryOff="@string/attachment_summary_off"-->
+<!--            app:summaryOn="@string/attachment_summary_on"-->
+<!--            app:title="@string/attachment_title" />-->
 
     </PreferenceCategory>
 
