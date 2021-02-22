@@ -1,5 +1,13 @@
 package com.liepy.mrl.util;
 
+import android.util.Log;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -11,6 +19,7 @@ public class TulingApi {
     // ================== 图灵机器人参数设置 ==========================
     public static final String urlString = "http://openapi.tuling123.com/openapi/api/v2";
     private static final String apiKey = "6837fbca9f0c494aa0745714db9a80a2";
+    private static final String TAG = TulingApi.class.getSimpleName();
 
     //图灵机器人接口
     public static String chat(String text){
@@ -42,7 +51,7 @@ public class TulingApi {
                 "}";
         String response = MyRequest.post(urlString, param, requestProperty, json);
         print(response);
-        String text_ans = getTextFromResponse(response);
+        String text_ans = getTextFromResponse(response,0);
 
         return text_ans;
     }
@@ -61,6 +70,18 @@ public class TulingApi {
             text = m.group(0);
         }
 
+        Log.d(TAG,text);
+        return text;
+    }
+
+    public static String getTextFromResponse(String response, int code){
+        JsonParser parser = new JsonParser();
+        JsonElement je = parser.parse(response);
+        JsonObject jobj = je.getAsJsonObject();//从json元素转变成json对象
+        String text = ((JsonArray)(jobj.get("results"))).get(0).getAsJsonObject().
+                get("values").getAsJsonObject().get("text").getAsString();//从json对象获取指定属性的值
+//        System.out.println(text);
+//        int age = jobj.get("age").getAsInt();
         return text;
     }
 }

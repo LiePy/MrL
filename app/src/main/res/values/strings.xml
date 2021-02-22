@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MrL</string>
+    <string name="app_name">小O语音助手</string>
     <!-- Settings Activity Title -->
     <string name="title_activity_settings">Settings</string>
 
@@ -9,7 +9,7 @@
     <string name="other_header">其他</string>
 
     <!-- wp Preferences -->
-    <string name="name_title">名字</string>
+    <string name="name_title">测试语句</string>
     <string name="speaker_title">人声模板</string>
     <string name="volume_title">说话音量</string>
     <string name="speed_title">说话语速</string>
@@ -24,7 +24,7 @@
 
 
     <!-- tts Preferences -->
-    <string name="sync_title">Sync email periodically</string>
+    <string name="light_title">夜间模式</string>
     <string name="attachment_title">Download incoming attachments</string>
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>

@@ -1,5 +1,7 @@
 package com.liepy.mrl.util;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -10,12 +12,17 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.ContactsContract;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.RequiresApi;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.liepy.mrl.R;
 import com.liepy.mrl.SettingsActivity;

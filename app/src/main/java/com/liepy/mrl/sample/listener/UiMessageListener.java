@@ -52,6 +52,17 @@ public class UiMessageListener extends MessageListener implements MainHandlerCon
         mainHandler.sendMessage(mainHandler.obtainMessage(UI_CHANGE_INPUT_TEXT_SELECTION, progress, 0));
     }
 
+    /**
+     * 播放正常结束，每句播放正常结束都会回调，如果过程中出错，则回调onError,不再回调此接口
+     *
+     * @param utteranceId
+     */
+    @Override
+    public void onSpeechFinish(String utteranceId) {
+        sendMessage("播放结束回调, 序列号:" + utteranceId,
+                false,200);     //修改了播放结束发送Message
+    }
+
     protected void sendMessage(String message) {
         sendMessage(message, false);
     }

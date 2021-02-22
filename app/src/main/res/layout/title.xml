@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/title_box"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -43,7 +44,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:text="返回"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -90,7 +90,7 @@
                     android:id="@+id/textView_menu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_gravity="center"
                     android:text="菜单"
                     android:textColor="#000000"
                     android:textSize="18dp" />
@@ -99,7 +99,6 @@
                     android:id="@+id/imageView4"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:layout_weight="1"
                     android:background="@drawable/my_ic_action_menu_foreground" />
             </LinearLayout>
 

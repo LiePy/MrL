@@ -3,17 +3,19 @@
 
     <PreferenceCategory app:title="@string/wp_header">
 
-        <EditTextPreference
-            app:defaultValue="小O"
-            app:key="name"
-            app:title="@string/name_title"
-            app:useSimpleSummaryProvider="true" />
+
 
 
 
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/tts_header">
+
+        <EditTextPreference
+            app:defaultValue="我现在的声音是这样的，你觉得怎么样？"
+            app:key="test_text"
+            app:title="@string/name_title"
+            app:useSimpleSummaryProvider="true" />
 
         <ListPreference
             app:defaultValue="@string/volume_value"
@@ -47,9 +49,7 @@
             app:title="@string/pitch_title"
             app:useSimpleSummaryProvider="true" />
 
-<!--        <SwitchPreferenceCompat-->
-<!--            app:key="switch"-->
-<!--            app:title="@string/sync_title" />-->
+
 
 <!--        <SwitchPreferenceCompat-->
 <!--            app:dependency="switch"-->
@@ -61,8 +61,9 @@
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/other_header">
-
-
+        <SwitchPreferenceCompat
+            android:id="@+id/light"
+            app:key="light"
+            app:title="@string/light_title" />
     </PreferenceCategory>
-
 </PreferenceScreen>
